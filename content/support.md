@@ -22,10 +22,11 @@ To help us solve your problem faster, please include:
 ## Frequently asked questions
 
 **Does the game cost anything or have ads?**
-_Edit this answer in `content/support.md`._
+NO
 
 **Does the game work offline?**
-_Edit this answer in `content/support.md`._
+YES
 
 **How do I reset my progress?**
-_Edit this answer in `content/support.md`._
+
+From the Start page, go to Settings, click Restart Progress.
