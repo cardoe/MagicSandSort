@@ -12,6 +12,7 @@
   --purple:    #7c3aed;
   --purple-deep: #4c1d95;
   --ink:       #2b2540;
+  --footer-bg: #241a33;
   --paper:     #faf6ff;
   --muted:     #6b6484;
   --card-bg:   #ffffff;
@@ -173,7 +174,7 @@ main.container { padding-top: 2rem; padding-bottom: 2rem; }
 .site-footer {
   margin-top: 3rem;
   padding: 1.5rem 0;
-  background: var(--ink);
+  background: var(--footer-bg);
   color: #efeaf7;
   text-align: center;
 }
