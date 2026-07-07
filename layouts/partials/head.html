@@ -1,0 +1,14 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  {{ with .Description }}<meta name="description" content="{{ . }}" />{{ end }}
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
+  {{ with resources.Get "img/icon.png" }}
+    {{ $fav := .Resize "180x180 png" }}
+    <link rel="icon" href="{{ $fav.RelPermalink }}" sizes="any" />
+    <link rel="apple-touch-icon" href="{{ $fav.RelPermalink }}" />
+  {{ else }}
+    <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml" />
+  {{ end }}
+</head>

@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ "" | relURL }}">
+      {{ with resources.Get "img/icon.png" }}
+        {{ $ic := .Resize "80x80 png" }}
+        <img class="brand-icon" src="{{ $ic.RelPermalink }}" alt="" width="34" height="34" />
+      {{ else }}
+        <span class="brand-mark" aria-hidden="true">🧪</span>
+      {{ end }}
+      <span class="brand-name">Magic Sand Sort</span>
+    </a>
+    <nav class="site-nav">
+      {{ range site.Menus.main }}
+        <a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} class="active" aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </div>
+</header>

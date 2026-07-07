@@ -1,0 +1,32 @@
+# Site configuration for Magic Sand Sort.
+# The path in baseURL (/MagicSandSort/) is what makes every internal link and
+# asset resolve correctly under cardoe.com/MagicSandSort/. Do not remove it.
+baseURL = "https://cardoe.com/MagicSandSort/"
+title = "Magic Sand Sort"
+enableRobotsTXT = true
+
+# Brochure site: no tags/categories, so skip generating empty taxonomy pages.
+disableKinds = ["taxonomy", "term"]
+
+[languages.en]
+  locale = "en-US"
+
+[params]
+  # Shown in the footer and elsewhere; edit freely.
+  supportEmail = "magicsandsort@thegoldsteins.org"
+
+# Simple top navigation. Add/reorder entries here to change the header menu.
+[[menu.main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Support"
+  pageRef = "/support"
+  weight = 2
+
+[[menu.main]]
+  name = "Privacy"
+  pageRef = "/privacy"
+  weight = 3

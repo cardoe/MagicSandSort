@@ -1,0 +1,199 @@
+/* Magic Sand Sort — plain CSS, no build step required.
+   Playful, colorful, and readable on phones and desktops. */
+
+:root {
+  --sand:      #f7d774;
+  --sand-deep: #e9b949;
+  --coral:     #ff7a59;
+  --pink:      #ff5e7e;
+  --orange:    #ff8a3d;
+  --sky:       #4cc9f0;
+  --grape:     #a855f7;
+  --purple:    #7c3aed;
+  --purple-deep: #4c1d95;
+  --ink:       #2b2540;
+  --paper:     #faf6ff;
+  --muted:     #6b6484;
+  --card-bg:   #ffffff;
+  --shadow:    0 6px 20px rgba(43, 37, 64, 0.12);
+  --radius:    16px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 500px at 50% -200px, rgba(124, 58, 237, 0.16), transparent),
+    linear-gradient(180deg, var(--paper), #f3ecff);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+a { color: var(--coral); }
+a:hover { color: var(--grape); }
+
+/* Header */
+.site-header {
+  background: linear-gradient(90deg, var(--purple), var(--grape));
+  box-shadow: var(--shadow);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+.brand-mark { font-size: 1.4rem; }
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+.site-nav { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+.site-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+}
+.site-nav a:hover,
+.site-nav a.active {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+/* Main */
+main.container { padding-top: 2rem; padding-bottom: 2rem; }
+
+/* Hero (home) */
+.hero { text-align: center; padding: 1.5rem 0 1rem; }
+.hero-mark { font-size: 3rem; }
+.hero-icon {
+  width: 112px;
+  height: 112px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(76, 29, 149, 0.35);
+}
+.hero h1 {
+  font-size: 2.4rem;
+  margin: 0.5rem 0 0.5rem;
+  background: linear-gradient(90deg, var(--purple), var(--pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.tagline { font-size: 1.2rem; color: var(--muted); margin: 0 auto 1.25rem; max-width: 34ch; }
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--orange), var(--pink));
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(255, 94, 126, 0.4);
+}
+.btn:hover { color: #fff; transform: translateY(-1px); }
+
+/* Screenshot gallery (home) */
+.screenshots {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.screenshots img {
+  width: 200px;
+  max-width: 45%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  border: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Content pages */
+.page h1 { font-size: 2rem; margin-top: 0; }
+.page h2 { margin-top: 1.75rem; color: var(--grape); }
+.home-body { text-align: center; max-width: 52ch; margin: 0 auto; }
+
+/* Home link cards */
+.card-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  border: 2px solid transparent;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.card:hover { border-color: var(--sky); transform: translateY(-2px); color: var(--ink); }
+.card-icon { font-size: 1.8rem; }
+.card-title { font-weight: 800; font-size: 1.1rem; }
+.card-text { color: var(--muted); font-size: 0.95rem; }
+
+/* Footer */
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  background: var(--ink);
+  color: #efeaf7;
+  text-align: center;
+}
+.site-footer a { color: var(--sand); }
+.site-footer .muted { color: #9d95ad; font-size: 0.9rem; margin: 0.25rem 0 0; }
+
+.muted { color: var(--muted); }
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f4eefe;
+    --paper: #2a1245;
+    --muted: #c3b6dc;
+    --card-bg: #38224f;
+  }
+  body {
+    /* Purple → maroon, echoing the game's background. */
+    background: linear-gradient(180deg, #3b1466 0%, #4a1450 55%, #5b1a3a 100%);
+  }
+  .card { border-color: rgba(255, 255, 255, 0.08); }
+  .screenshots img { border-color: rgba(255, 255, 255, 0.12); }
+}

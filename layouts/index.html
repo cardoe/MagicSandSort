@@ -1,0 +1,45 @@
+{{ define "main" }}
+<section class="hero">
+  {{ with resources.Get "img/icon.png" }}
+    {{ $hero := .Resize "256x256 png" }}
+    <img class="hero-icon" src="{{ $hero.RelPermalink }}" alt="Magic Sand Sort app icon" width="128" height="128" />
+  {{ else }}
+    <div class="hero-mark" aria-hidden="true">🧪✨</div>
+  {{ end }}
+  <h1>{{ site.Title }}</h1>
+  <p class="tagline">{{ with .Params.tagline }}{{ . }}{{ else }}A colorful sand-sorting puzzle game.{{ end }}</p>
+  {{ with .Params.appStoreURL }}
+    <a class="btn" href="{{ . }}">Download on the App Store</a>
+  {{ end }}
+</section>
+
+{{ $shots := slice }}
+{{ range (seq 1 3) }}
+  {{ with resources.Get (printf "img/screenshot-%d.png" .) }}{{ $shots = $shots | append . }}{{ end }}
+{{ end }}
+{{ with $shots }}
+  <section class="screenshots" aria-label="Game screenshots">
+    {{ range . }}
+      {{ $s := .Resize "480x png" }}
+      <img src="{{ $s.RelPermalink }}" width="{{ $s.Width }}" height="{{ $s.Height }}" alt="Magic Sand Sort gameplay screenshot" loading="lazy" />
+    {{ end }}
+  </section>
+{{ end }}
+
+<article class="page home-body">
+  {{ .Content }}
+</article>
+
+<section class="card-links">
+  <a class="card" href="{{ "support/" | relURL }}">
+    <span class="card-icon" aria-hidden="true">💬</span>
+    <span class="card-title">Support</span>
+    <span class="card-text">Need help? Get in touch.</span>
+  </a>
+  <a class="card" href="{{ "privacy/" | relURL }}">
+    <span class="card-icon" aria-hidden="true">🔒</span>
+    <span class="card-title">Privacy</span>
+    <span class="card-text">How your data is handled (spoiler: we don't collect any).</span>
+  </a>
+</section>
+{{ end }}
